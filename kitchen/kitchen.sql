@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS kitchen;
+CREATE TABLE kitchen(
+id SERIAL PRIMARY KEY,
+createtime TIMESTAMP WITH TIME ZONE default CURRENT_TIMESTAMP NOT NULL,
+vote SMALLINT,
+kitchen SMALLINT,
+timetaken INT,
+remark TEXT,
+address VARCHAR(32)
+);
