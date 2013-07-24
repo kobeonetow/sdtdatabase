@@ -95,6 +95,7 @@ COPY action (id, name, description) FROM stdin;
 69	employment_request_edit	增补修改
 70	employment_driverexam_edit	考试修改
 71	employment_application_idcard_setting	证件设置
+72	employee_idcards_file_upload	证件图片上传
 \.
 SELECT setval('action_id_seq',64);
 

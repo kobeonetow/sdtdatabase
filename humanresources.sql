@@ -43,7 +43,8 @@ DROP TABLE IF EXISTS hrimage;
 CREATE TABLE hrimage(
 id serial PRIMARY KEY NOT NULL,
 name VARCHAR(128) NOT NULL,
-image bytea
+image bytea,
+ipath VARCHAR(256)
 );
 
 DROP TABLE IF EXISTS employee;
