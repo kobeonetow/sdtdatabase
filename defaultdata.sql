@@ -70,7 +70,7 @@ COPY action (id, name, description) FROM stdin;
 44	employee_driver_data_download	驾驶员数据下载
 45	employee_coor_data_download	调动数据下载
 46	employee_coor_view	查看调动
-47	employee_coor_add	添加调动
+47	employee_coor_add	添加调动47	employee_coor_add	添加调动
 48	employee_property_list_view	属性列别查看
 49	employee_property_list_add	添加属性
 50	employee_property_list_rm	删除属性
@@ -96,8 +96,9 @@ COPY action (id, name, description) FROM stdin;
 70	employment_driverexam_edit	考试修改
 71	employment_application_idcard_setting	证件设置
 72	employee_idcards_file_upload	证件图片上传
+73	employee_coor_edit	修改调动
 \.
-SELECT setval('action_id_seq',64);
+SELECT setval('action_id_seq',73);
 
 --
 -- Data for Name: actiongroup; Type: TABLE DATA; Schema: public; Owner: postgres
