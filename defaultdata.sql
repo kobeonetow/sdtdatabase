@@ -101,8 +101,16 @@ COPY action (id, name, description) FROM stdin;
 75	employee_profilepic_upload	员工头像上传
 76	vehicle_system	车辆档案系统
 77	vehicle_profile_edit	档案修改
+78	vehicle_mile_view	公里数查看
+79	vehicle_mile_edit	公里数修改
+80	vehicle_file_extras	车辆附件文件
+81	vehicle_file_annul	车辆年审文件
+82	vehicle_file_fullcheck	车辆综合文件
+83	vehicle_file_repair	车辆维修文件
+84	vehicle_file_maintenance	车辆保养文件
+85	vehicle_file_check	车辆文件上传
 \.
-SELECT setval('action_id_seq',77);
+SELECT setval('action_id_seq',85);
 
 --
 -- Data for Name: actiongroup; Type: TABLE DATA; Schema: public; Owner: postgres

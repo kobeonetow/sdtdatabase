@@ -71,13 +71,28 @@ historytotal FLOAT,
 FOREIGN KEY (vid) REFERENCES vehicleprofile(id)
 );
 
+
+DROP TABLE IF EXISTS vehiclefiles;
+CREATE TABLE vehiclefiles(
+id SERIAL PRIMARY KEY,
+filename VARCHAR(128),
+ipath VARCHAR(256),
+udate DATE,
+creator INT,
+FOREIGN KEY (creator) REFERENCES account(id)
+);
+
 DROP TABLE IF EXISTS vehiclecheck;
 CREATE TABLE vehiclecheck(
 id SERIAL PRIMARY KEY,
 vid INT NOT NULL,
-ctype INT NOT NULL,
+ctype VARCHAR(10) NOT NULL,
 miles FLOAT,
 cdate DATE,
-filename VARCHAR(128),
-FOREIGN KEY (vid) REFERENCES vehicleprofile(id)
+fid INT,
+remark VARCHAR(64),
+creator INT,
+FOREIGN KEY (vid) REFERENCES vehicleprofile(id),
+FOREIGN KEY (fid) REFERENCES vehiclefiles(id),
+FOREIGN KEY (creator) REFERENCES account(id)
 );
