@@ -109,6 +109,7 @@ COPY action (id, name, description) FROM stdin;
 83	vehicle_file_repair	车辆维修文件
 84	vehicle_file_maintenance	车辆保养文件
 85	vehicle_file_check	车辆文件上传
+86	administrator_system	管理员特有
 \.
 SELECT setval('action_id_seq',85);
 

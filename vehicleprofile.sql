@@ -8,6 +8,7 @@ datejoin DATE,
 datepurchase DATE,
 dateuse DATE,
 ptaxnumber VARCHAR(16),
+transportid VARCHAR(18),
 source VARCHAR(8),
 servicetype VARCHAR(8),
 vehicleprice VARCHAR(10),
@@ -46,7 +47,10 @@ movebreak VARCHAR(16),
 stopbreak VARCHAR(16),
 hangmodel VARCHAR(48),
 aircond VARCHAR(24),
-ecotype VARCHAR(8)
+ecotype VARCHAR(8),
+status VARCHAR(1),
+throwdate DATE,
+dateinvalidate DATE
 );
 
 DROP TABLE IF EXISTS vehiclemiles;
