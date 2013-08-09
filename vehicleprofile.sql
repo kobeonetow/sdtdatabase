@@ -52,7 +52,9 @@ aircond VARCHAR(24),
 ecotype VARCHAR(8),
 status VARCHAR(1),
 throwdate DATE,
-dateinvalidate DATE
+dateinvalidate DATE,
+recordid VARCHAR(16),
+subcompany VARCHAR(8)
 );
 
 DROP TABLE IF EXISTS vehiclemiles;
