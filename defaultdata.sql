@@ -111,8 +111,8 @@ COPY action (id, name, description) FROM stdin;
 85	vehicle_file_check	车辆文件上传
 86	administrator_system	管理员特有
 87	vehicle_team_view	车队查看
-88	vehicle_team_edit 修改车队车辆
-89	vehicle_team_edit_team 修改车队
+88	vehicle_team_edit	修改车队车辆
+89	vehicle_team_edit_team	修改车队
 90	vehicle_route_view	查看路线
 91	vehicle_route_edit	线路修改
 \.
