@@ -40,6 +40,7 @@ creator INT NOT NULL,
 scoredate DATE,
 score FLOAT(24) NOT NULL,
 createdate DATE,
+status SMALLINT NOT NULL,
 Foreign KEY (receiverid) REFERENCES scoremember(workerid),
 Foreign KEY (senderid) REFERENCES scoremember(workerid),
 Foreign KEY (scoretypeid) REFERENCES scoretype(id),
@@ -108,4 +109,35 @@ quantity INT NOT NULL,
 score INT NOT NULL,
 date DATE,
 FOREIGN KEY (workerid) REFERENCES employee(workerid)
+);
+
+DROP TABLE IF EXISTS scoreapprover;
+CREATE TABLE scoreapprover(
+id serial PRIMARY KEY NOT NULL,
+approver INT NOT NULL,
+departmentid INT,
+vehicleteamid INT,
+isapprover VARCHAR(1) NOT NULL,
+FOREIGN KEY (approver) REFERENCES employee(id),
+FOREIGN KEY (departmentid) REFERENCES department(id),
+FOREIGN KEY (vehicleteamid) REFERENCES vehicleteam(id)
+);
+
+DROP TABLE IF EXISTS departmentscores;
+CREATE TABLE departmentscores(
+id serial PRIMARY KEY NOT NULL,
+departmentid INT,
+vehicleteamid INT,
+basescore FLOAT,
+available FLOAT,
+FOREIGN KEY (departmentid) REFERENCES department(id),
+FOREIGN KEY (vehicleteamid) REFERENCES vehicleteam(id)
+);
+
+DROP TABLE IF EXISTS scoreexceptionlist;
+CREATE TABLE scoreexceptionlist(
+id serial PRIMARY KEY NOT NULL,
+positionid INT,
+status INT,
+FOREIGN KEY (positionid) REFERENCES position(id)
 );

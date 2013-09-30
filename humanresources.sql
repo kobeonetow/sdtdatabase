@@ -3,8 +3,10 @@
 DROP TABLE IF EXISTS department;
 CREATE TABLE department(
 id serial PRIMARY KEY NOT NULL,
+pid INT,
 name VARCHAR(128) UNIQUE NOT NULL,
-remark VARCHAR(128)
+remark VARCHAR(128),
+pid REFERENCES department(id)
 );
 
 DROP TABLE IF EXISTS position;
