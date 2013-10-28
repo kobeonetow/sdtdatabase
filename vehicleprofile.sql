@@ -76,7 +76,7 @@ nov FLOAT,
 dece FLOAT,
 yeartotal FLOAT,
 historytotal FLOAT,
-FOREIGN KEY (vid) REFERENCES vehicleprofile(id)
+FOREIGN KEY (vid) REFERENCES vehicle_profile(id)
 );
 
 
@@ -100,7 +100,7 @@ cdate DATE,
 fid INT,
 remark VARCHAR(64),
 creator INT,
-FOREIGN KEY (vid) REFERENCES vehicleprofile(id),
+FOREIGN KEY (vid) REFERENCES vehicle_profile(id),
 FOREIGN KEY (fid) REFERENCES vehiclefiles(id),
 FOREIGN KEY (creator) REFERENCES account(id)
 );
@@ -133,7 +133,7 @@ CREATE TABLE vehicleteammember(
 id SERIAL PRIMARY KEY,
 vid INT NOT NULL,
 teamid INT NOT NULL,
-FOREIGN KEY (vid) REFERENCES vehicleprofile(id),
+FOREIGN KEY (vid) REFERENCES vehicle_profile(id),
 FOREIGN KEY (teamid) REFERENCES vehicleteam(id)
 );
 
@@ -143,7 +143,7 @@ CREATE TABLE vehiclelanemapper(
 id SERIAL PRIMARY KEY,
 vid INT NOT NULL,
 laneid INT NOT NULL,
-FOREIGN KEY (vid) REFERENCES vehicleprofile(id),
+FOREIGN KEY (vid) REFERENCES vehicle_profile(id),
 FOREIGN KEY (laneid) REFERENCES vehiclelane(id)
 );
 

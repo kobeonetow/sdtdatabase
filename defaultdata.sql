@@ -115,7 +115,7 @@ COPY action (id, name, description) FROM stdin;
 89	vehicle_team_edit_team	修改车队
 90	vehicle_route_view	查看路线
 91	vehicle_route_edit	线路修改
-92	scoreapprover_system	审核人管理
+92	score_scoreapprover	审核人管理
 93	score_approve_items	审核项目
 94	score_approve_submit_items	提交审核项目
 \.
