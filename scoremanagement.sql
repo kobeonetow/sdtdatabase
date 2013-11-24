@@ -85,11 +85,21 @@ remark VARCHAR(256),
 recordid VARCHAR(10)
 );
 
-DROP TABLE IF EXISTS scoregroup;
-CREATE TABLE scoregroup(
+DROP TABLE IF EXISTS score_group;
+CREATE TABLE score_group(
 id serial PRIMARY KEY NOT NULL,
+pid INT REFERENCES score_group(id),
 name VARCHAR(64),
-remark VARCHAR(256)
+basescore FLOAT(10),
+available FLOAT(10),
+lastUpdateDate DATE
+);
+
+DROP TABLE IF EXISTS score_group_mapper;
+CREATE TABLE score_group_mapper(
+id serial PRIMARY KEY NOT NULL,
+empid INT REFERENCES employee(id),
+scoregroupid INT REFERENCES score_group(id)
 );
 
 DROP TABLE IF EXISTS positiongroup;
