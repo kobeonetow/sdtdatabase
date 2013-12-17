@@ -7,7 +7,8 @@ username VARCHAR(64) UNIQUE NOT NULL,
 password VARCHAR(32) NOT NULL,
 registerDate DATE default CURRENT_DATE,
 status VARCHAR(1),
-employee VARCHAR(10)
+employee VARCHAR(10),
+email VARCHAR(128)
 );
 
 DROP TABLE IF EXISTS groups;

@@ -118,6 +118,7 @@ COPY action (id, name, description) FROM stdin;
 92	score_scoreapprover	审核人管理
 93	score_approve_items	审核项目
 94	score_approve_submit_items	提交审核项目
+95	score_group_edit	积分组编制
 \.
 SELECT setval('action_id_seq',94);
 
@@ -470,11 +471,13 @@ INSERT INTO workertype(name) VALUES('中级汽车电气与制冷/高级汽车维
 
 INSERT INTO fixoptions(id,name,content) VALUES(1,'政治面貌','群众,无党派,团员,民革党员,共产党员,民主党员,中共党员');
 INSERT INTO fixoptions(id,name,content) VALUES(2,'户籍类型','省外城镇,省内城镇,省外农村,省内农村,外市农村');
-INSERT INTO fixoptions(id,name,content) VALUES(3,'职级','非管,高管,中管,管,退伍军人');
+INSERT INTO fixoptions(id,name,content) VALUES(3,'职级','非管,高管,中管,管,后勤,退伍军人');
 INSERT INTO fixoptions(id,name,content) VALUES(4,'婚姻状况','再婚,离婚,已婚,未婚,离异');
 INSERT INTO fixoptions(id,name,content) VALUES(5,'合同类型','正式,试用,临时');
 INSERT INTO fixoptions(id,name,content) VALUES(6,'调度类型','升迁,调动,离职,复职');
 INSERT INTO fixoptions(id,name,content) VALUES(7,'证件类型','驾驶证,从业资格证,服务资格证');.
 INSERT INTO fixoptions(id,name,content) VALUES(8,'特殊身份','无,退伍军人,国家干部');
 INSERT INTO fixoptions(id,name,content) VALUES(9,'所属镇街','容桂,大良,陈村兼北滘,杏坛,跨区,龙江,均安,陈村,勒流,北滘');
-SELECT setval('fixoptions_id_seq',9);
+INSERT INTO fixoptions(id,name,content) VALUES(10,'健康状况','健康');
+
+SELECT setval('fixoptions_id_seq',10);

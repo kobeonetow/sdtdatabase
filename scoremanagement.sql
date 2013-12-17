@@ -13,6 +13,7 @@ scoreobject VARCHAR(16),
 remark VARCHAR(128),
 creator INT NOT NULL,
 createdate DATE,
+status INT DEFAULT 1,
 FOREIGN KEY (creator) REFERENCES account(id)
 );
 
@@ -41,10 +42,18 @@ scoredate DATE,
 score FLOAT(24) NOT NULL,
 createdate DATE,
 status SMALLINT NOT NULL,
+remarkid INT,
+Foreign KEY (remarkid) REFERENCES scorerecord_remark(id),
 Foreign KEY (receiverid) REFERENCES scoremember(workerid),
 Foreign KEY (senderid) REFERENCES scoremember(workerid),
 Foreign KEY (scoretypeid) REFERENCES scoretype(id),
 FOREIGN KEY (creator) REFERENCES account(id)
+);
+
+DROP TABLE IF EXISTS scorerecord_remark;
+CREATE TABLE scorerecord_remark(
+id serial PRIMARY KEY NOT NULL,
+remark VARCHAR(512)
 );
 
 DROP TABLE IF EXISTS scoresummary;
@@ -125,12 +134,10 @@ DROP TABLE IF EXISTS scoreapprover;
 CREATE TABLE scoreapprover(
 id serial PRIMARY KEY NOT NULL,
 approver INT NOT NULL,
-departmentid INT,
-vehicleteamid INT,
+scoregroupid INT NOT NULL,
 isapprover VARCHAR(1) NOT NULL,
 FOREIGN KEY (approver) REFERENCES employee(id),
-FOREIGN KEY (departmentid) REFERENCES department(id),
-FOREIGN KEY (vehicleteamid) REFERENCES vehicleteam(id)
+FOREIGN KEY (scoregroupid) REFERENCES score_group(id)
 );
 
 DROP TABLE IF EXISTS departmentscores;

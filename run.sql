@@ -16,4 +16,8 @@ CREATE DATABASE sdbms WITH ENCODING 'UTF8';
 \i account.sql 
 \i humanresources.sql
 \i scoremanagement.sql
+\i imagefilesaver.sql
+\i recruitment.sql
+\i vehicle_profile_schema_one.sql
+\i vehicle_profile_schema_two.sql
 \i defaultdata.sql
